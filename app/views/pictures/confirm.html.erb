@@ -2,11 +2,12 @@
 
 <%= form_with(model: @picture, url: pictures_path, local: true) do |form| %>
   <%= form.hidden_field :title %>
-  <%= form.hidden_field :content %>  
+  <%= form.hidden_field :content %>
+  <%= hidden_field_tag :"cache[image_pict]", @picture.image_pict.cache_name %>
 
   <p>タイトル:<%= @picture.title %></p>
   <p>本文:<%= @picture.content %></p>
-
+  <%= image_tag(@picture.image_pict.to_s) %>
   <%= form.submit  "登録する" %>
   <%= form.submit "戻る", name: 'back'%>
 <% end %>

@@ -1,4 +1,6 @@
 class PicturesController < ApplicationController
+  before_action :set_picture, only: [:show, :edit, :update, :destroy]
+
   def index
     @pictures = Picture.all
   end
@@ -9,6 +11,7 @@ class PicturesController < ApplicationController
 
   def create
     @picture = Picture.new(picture_params)
+    @picture.image_pict.retrieve_from_cache! params[:cache][:image_pict]#carriewave設定
     if params[:back]
       render 'new'
     else
@@ -21,15 +24,12 @@ class PicturesController < ApplicationController
   end
 
   def show
-    @picture = Picture.find(params[:id])
   end
 
   def edit
-    @picture = Picture.find(params[:id])
   end
 
   def update
-    @picture = Picture.find(params[:id])
     if @picture.update(picture_params)
       redirect_to pictures_path, notice: "Pictureを編集しました！"
     else
@@ -38,19 +38,24 @@ class PicturesController < ApplicationController
   end
 
   def destroy
-    @picture = Picture.find(params[:id])
     @picture.destroy
     redirect_to pictures_path, notice:"Pictureを削除しました！"
   end
 
   def confirm
     @picture = Picture.new(picture_params)
+    @picture.image_pict.cache! #carriewave設定
     render :new if @picture.invalid?
   end
 
   private
 
   def picture_params
-    params.require(:picture).permit(:title, :content, :image_pict, :image_cache)
+    params.require(:picture).permit(:title, :content, :image_pict)
   end
+
+  def set_picture
+    @picture = Picture.find(params[:id])
+  end
+
 end
