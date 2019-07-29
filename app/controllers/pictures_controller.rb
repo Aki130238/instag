@@ -1,4 +1,8 @@
 class PicturesController < ApplicationController
+  def index
+    @pictures = Picture.all
+  end
+
   def new
     @picture = Picture.new
   end
@@ -6,7 +10,7 @@ class PicturesController < ApplicationController
   def create
     @picture = Picture.new(picture_params)
     if @picture.save
-        redirect_to new_picture_path, notice: "Pictureを作成しました！"
+        redirect_to pictures_path, notice: "Pictureを作成しました！"
       else
         render 'new'
       end
