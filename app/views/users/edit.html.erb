@@ -1,0 +1,15 @@
+<%= form_with(model: @user, local: true ,url: user_path) do |form| %>
+  <div class="user_title">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+  <div class="user_title">
+    <%= form.label :email %>
+    <%= form.text_field :email %>
+  </div>
+  <div class="user_title">
+    <%= form.label :image_user %>
+    <%= form.file_field :image_user %>
+  </div>
+  <%= form.submit %>
+<% end %>
