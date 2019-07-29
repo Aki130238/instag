@@ -13,6 +13,7 @@
 
     <td><%= link_to '詳細を見る', picture_path(picture.id) %></td>
     <td><%= link_to "編集する", edit_picture_path(picture.id) %></td>
+    <td><%= link_to '削除する', picture_path(picture.id), method: :delete ,data: { confirm: '本当に削除していいですか？' } %></td>
   </tr>
 <% end %>
 </table>
