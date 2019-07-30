@@ -16,7 +16,7 @@ class PicturesController < ApplicationController
       render 'new'
     else
       if @picture.save
-        #SampleMailer.send_when_create(current_user).deliver
+        SampleMailer.send_when_create(current_user).deliver
         redirect_to pictures_path, notice: "Pictureを作成しました！"
       else
         render 'new'
