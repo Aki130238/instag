@@ -1,0 +1,17 @@
+<h1>お気に入り一覧</h1>
+<p><%= notice %></p>
+<table>
+  <tr>
+    <th>タイトル</th>
+    <th>内容</th>
+  </tr>
+
+<% @favorites.each do |f| %>
+  <tr>
+    <td><%= f.picture.title %></td>
+    <td><%= f.picture.content %></td>
+    <td><%= image_tag f.picture.image_pict.to_s %></td>
+    <td><%= f.user.name %></td>
+  </tr>
+<% end %>
+</table>

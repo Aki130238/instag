@@ -16,6 +16,7 @@ class PicturesController < ApplicationController
       render 'new'
     else
       if @picture.save
+        SampleMailer.send_when_create(current_user).deliver
         redirect_to pictures_path, notice: "Pictureを作成しました！"
       else
         render 'new'
@@ -47,6 +48,10 @@ class PicturesController < ApplicationController
     @picture = current_user.pictures.new(picture_params)
     @picture.image_pict.cache!#carriewave一時的アップロード設定
     render :new if @picture.invalid?
+  end
+
+  def favorite
+    @favorite = current_user.favorite_users
   end
 
   private

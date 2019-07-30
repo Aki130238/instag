@@ -15,6 +15,7 @@ class UsersController < ApplicationController
       render 'new'
     else
       if @user.save
+        session[:user_id] = @user.id
         redirect_to user_path(@user.id), notice: "userを作成しました！"
       else
         render 'new'
