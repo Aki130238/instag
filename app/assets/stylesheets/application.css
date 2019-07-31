@@ -13,3 +13,259 @@
  *= require_tree .
  *= require_self
  */
+
+ body {
+   width: 100vw;
+   height: 100vh;
+   margin: 0;
+   font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+   font-size: 14px;
+   line-height: 1.42857143;
+   color: #333;
+   background-color: #fff;
+
+ }
+
+ h1, h2, h3, h4, h5, h6 {
+   text-rendering: optimizeLegibility;
+ }
+
+ input[type="text"], input[type="email"], input[type="password"], input[type="password_confirmation"],
+ textarea {
+   outline: none;
+   border: 1px solid #E6ECF0;
+   -webkit-transition: all;
+   transition: all;
+ }
+
+ input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focus, input[type="password_confirmation"]:focus,
+ textarea:focus {
+   border: 1px solid #1abc9c;
+ }
+
+ input:focus::-webkit-input-placeholder,
+ textarea:focus::-webkit-input-placeholder {
+   opacity:0.3;
+   transition: .1s;
+ }
+
+ ol, ul, li{
+   margin: 0;
+   list-style: none;
+   padding: 0;
+   text-decoration: none;
+ }
+
+ ul {
+   display: block;
+   list-style-type: disc;
+   /*margin-block-start: 1em;*/
+   margin-block-end: 1em;
+   margin-inline-start: 0px;
+   margin-inline-end: 0px;
+   padding-inline-start: 40px;
+ }
+
+ div {
+   display: block;
+ }
+
+ form {
+   display: block;
+   margin-top: 0em;
+ }
+
+ button, input, select, textarea {
+   font-family: inherit;
+   font-size: inherit;
+   line-height: inherit;
+ }
+
+ a {
+   color: #777;
+   text-decoration: none;
+ }
+
+
+.header-menu {
+  height: 40px;
+  width: 100%;
+  background-color: #FAFAFA;
+  min-height: 42px;
+  position: relative;
+  z-index: 1;
+}
+
+.menu-box {
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+.headerlogo {
+  float: left;
+}
+
+.header-menu {
+  text-align: center;
+}
+
+.header-menu li {
+  text-decoration: none;
+}
+
+
+.header-menu a {
+  color: white;
+}
+
+a:hover.header-menu {
+  color: #999;
+  text-decoration: underline;
+}
+
+ .EdgeButton {
+   background-color: #fff;
+   border: 1px solid #1da1f2;
+   color: #1da1f2;
+   margin-bottom: 20px;
+   text-decoration: none;
+ }
+
+ .EdgeButton--primary {
+   background-color: #1da1f2;
+   border: 1px solid #1da1f2;
+   color: #fff;
+   float: left;
+ }
+
+ .EdgeButton, .EdgeButton:visited {
+   border-radius: 100px;
+   box-shadow: none;
+   cursor: pointer;
+   font-size: 14px;
+   font-weight: bold;
+   line-height: 20px;
+   padding: 6px 16px;
+   position: relative;
+   text-align: center;
+   white-space: nowrap;
+ }
+
+ .colorChange {
+   background-color: #1da1f2;
+   border: 1px solid #1da1f2;
+   color: #fff;
+ }
+
+ .colorChange a {
+   color: #1c94e0;
+   text-decoration: none;
+ }
+
+
+ a:hover.EdgeButton  {
+   text-decoration: none;
+ }
+
+
+ .navbar {
+   width: 100vw;
+   height: 50px;
+   margin: 0;
+ }
+
+ .navbar-default {
+   color: #777;
+   border-radius: 0;
+   border-bottom: 1px solid rgba(0,0,0,0.25);
+   background-color: #FFF;
+ }
+
+ .container-fluid{
+   max-width: 1000px;
+   margin: 0 auto;
+   height: 50px;
+
+ }
+
+ .navbar-header {
+   float: left;
+   height: 36px;
+   padding-top: 14px;
+   padding-left: 20px
+
+ }
+
+ .navbar-toggle {
+
+ }
+
+
+ .logomark_tw {
+   height: 20px;
+   width: 20px;
+   vertical-align: middle;
+ }
+
+ .navbar-brand{
+   color: #777;
+   line-height: 20px;
+   font-size: 14px;
+   font-weight: bold;
+   padding-left: 15px;
+ }
+
+ #gnavi {
+
+ }
+
+ .collapsed {
+
+ }
+
+ .collapse {
+
+ }
+ .navbar-collapse {
+
+ }
+ .nav {
+   padding-left: 0;
+   margin-bottom: 0;
+   list-style: none;
+ }
+
+ .navbar-brand {
+   font-size: 14px;
+   font-weight: bold;
+ }
+
+ .navbar-nav {
+   padding-top: 5px;
+   float: right;
+ }
+
+ .navbar-nav li {
+   float: left;
+   padding: 10px 15px;
+ }
+
+ .navbar-nav a {
+   text-decoration: none;
+   color: #777;
+ }
+
+ .top_login_btn {
+
+ }
+
+ .rootLink {
+   font-size: 14px;
+   font-weight: bold;
+ }
+
+
+ .w980 {
+   width: 980px;
+   margin: 0 auto;
+ }

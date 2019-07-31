@@ -12,13 +12,11 @@
   <body>
     <header class="header-menu">
       <div class="menu-box">
-        <img src="/Facebook_New_Logo.png" height="82px" class="headerlogo">
-        <div class="menu-login">
+        <div class="nav navbar-nav">
 
           <% if logged_in? %>
           <ul>
-            <li><%= link_to(current_user.name, "/users/#{current_user.id}") %></li>
-            <li><%= link_to "Profile", user_path(current_user.id) %></li>
+            <li><%= link_to "#{current_user.name}", user_path(current_user.id) %></li>
             <li><%= link_to("Picture一覧","/pictures")%></li>
             <li><%= link_to("Picture投稿", new_picture_path) %></li>
             <li><%= link_to("ユーザー一覧", users_path) %></li>

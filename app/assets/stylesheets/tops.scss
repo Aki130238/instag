@@ -1,0 +1,40 @@
+.tops-wrap{
+  width: 100vw;
+  height: 100vh;
+  background-color: #FAFAFA;
+}
+
+.tops-wrap-box {
+  max-width: 980px;
+  height: 100%;
+  margin: 0 auto;
+}
+
+.tops-bgimg {
+  width: 55%;
+  height: 100%;
+  display: block;
+  background-image: url("/top-bg-img.png");
+  background-repeat: no-repeat;
+  float: left;
+}
+
+.tops-login {
+  max-width: 350px;
+  display: block;
+  float: right;
+  background-color: #FFF;
+  border: 1px solid #e6e6e6;
+  border-radius: 1px;
+  margin: 0 0 10px;
+  padding: 10px 10px;
+}
+
+.login-wrap p {
+
+}
+
+.login-text p {
+  font-size: 10px;
+  color: #777;
+}

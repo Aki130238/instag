@@ -1,22 +1,24 @@
-<h1>Picture一覧</h1>
-<p><%= notice %></p>
-<table>
-  <tr>
-    <th>タイトル</th>
-    <th>内容</th>
-  </tr>
+<div class="w980">
+  <h1>Picture一覧</h1>
+  <p><%= notice %></p>
+  <table>
+    <tr>
+      <th>タイトル</th>
+      <th>内容</th>
+    </tr>
 
-<% @pictures.each do |picture| %>
-  <tr>
-    <td><%= picture.user.name %></td>
-    <td><%= picture.title %></td>
-    <td><%= picture.content %></td>
-    <td><%= image_tag picture.image_pict.to_s %></td>
-    <td><%= link_to '詳細を見る', picture_path(picture.id) %></td>
-    <% if picture.user_id == current_user.id %>
-      <td><%= link_to "編集する", edit_picture_path(picture.id) %></td>
-      <td><%= link_to '削除する', picture_path(picture.id), method: :delete ,data: { confirm: '本当に削除していいですか？' } %></td>
-    <% end %>
-  </tr>
-<% end %>
-</table>
+  <% @pictures.each do |picture| %>
+    <tr>
+      <td><%= picture.user.name %></td>
+      <td><%= picture.title %></td>
+      <td><%= picture.content %></td>
+      <td><%= image_tag picture.image_pict.to_s %></td>
+      <td><%= link_to '詳細を見る', picture_path(picture.id) %></td>
+      <% if picture.user_id == current_user.id %>
+        <td><%= link_to "編集する", edit_picture_path(picture.id) %></td>
+        <td><%= link_to '削除する', picture_path(picture.id), method: :delete ,data: { confirm: '本当に削除していいですか？' } %></td>
+      <% end %>
+    </tr>
+  <% end %>
+  </table>
+</div>

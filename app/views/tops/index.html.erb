@@ -1,0 +1,21 @@
+<div class="tops-wrap">
+  <div class="tops-wrap-box">
+    <div class="tops-bgimg">
+    </div>
+    <div class="tops-login">
+      <h1 class="">Instagram</h1>
+      <h2 class="">友達の写真や動画をチェックしよう</h2>
+      <div class=""><div class=""></div><div class="">または</div><div class=""></div></div>
+      <div class="">
+        <%= form_with(model: @user, local: true) do |f| %>
+          <%= f.text_field :name, placeholder: "名前" %>
+          <%= f.email_field :email, placeholder: "E-mail" %>
+          <%= f.password_field :password, placeholder: "パスワード" %>
+          <%= f.password_field :password_confirmation, placeholder: "パスワード確認" %>
+          <%= f.submit "ユーザー登録する" %>
+        <% end %>
+      </div>
+      <div class=""><p class="">登録することで、Facebookの<a target="" href="https://help.instagram.com/581066165581870">利用規約</a>、<a target="_blank" href="https://help.instagram.com/519522125107875">データに関するポリシー</a>、<a target="_blank" href="/legal/cookies/">Cookieポリシー</a>に同意するものとします。</p></div>
+    </div>
+  </div>
+</div>

@@ -1,4 +1,7 @@
-<%= form_with(model: @user, local: true ,url: user_path) do |form| %>
+<div class="w980">
+  <h1>ユーザー情報編集</h1>
+  <p><%= notice %></p>
+  <%= form_with(model: @user, local: true ,url: user_path) do |form| %>
   <div class="user_title">
     <%= form.label :name %>
     <%= form.text_field :name %>
@@ -12,4 +15,5 @@
     <%= form.file_field :image_user %>
   </div>
   <%= form.submit %>
-<% end %>
+  <% end %>
+</div>
