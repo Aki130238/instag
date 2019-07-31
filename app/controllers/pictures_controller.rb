@@ -51,10 +51,6 @@ class PicturesController < ApplicationController
     render :new if @picture.invalid?
   end
 
-  def favorite
-    @favorite = current_user.favorite_users
-  end
-
   private
 
   def picture_params

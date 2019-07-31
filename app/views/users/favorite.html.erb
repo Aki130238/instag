@@ -1,0 +1,13 @@
+<h1>お気に入り一覧</h1>
+<p><%= notice %></p>
+
+<% if @favorites.present? %>
+  <P>お気に入りしているPictureはある</p>
+    <% @favorites.each do |favo| %>
+      <%= favo.user.name %>
+      <%= favo.picture.title %>
+      <%= image_tag favo.picture.image_pict.to_s %>
+    <% end %>
+<% else %>
+  <P>お気に入りしているPictureはありません</p>
+<% end %>

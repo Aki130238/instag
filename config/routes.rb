@@ -1,12 +1,15 @@
 Rails.application.routes.draw do
   root to: "tops#index"
-  resources :favorites, only: [:index, :create, :destroy]
+  resources :favorites, only: [:show, :create, :destroy]
   resources :sessions, only: [:new, :create, :destroy]
-  resources :users
+  resources :users do
+    member do
+      get :favorite
+    end
+  end
   resources :pictures do
     collection do
       post :confirm
-      post :favorites
     end
   end
   mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?

@@ -25,6 +25,7 @@ class UsersController < ApplicationController
   end
 
   def show
+    @favorite = current_user.favorites
   end
 
   def edit
@@ -48,6 +49,12 @@ class UsersController < ApplicationController
     # @user.image_user.cache!#carriewave設定
     render :new if @user.invalid?
   end
+
+  def favorite
+    @user = User.find(params[:id])
+    @favorites = @user.favorites
+  end
+
 
   private
 
