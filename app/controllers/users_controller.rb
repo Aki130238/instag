@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user, only: [:edit, :update, :destroy]
 
   def index
     @users = User.all
@@ -58,6 +59,11 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
-
+  def authenticate_user
+    unless current_user.id == @user.id
+      flash[:notice] = "ログインが必要"
+      redirect_to new_session_path, notice:"ログインが必要です"
+    end
+  end
 
 end
